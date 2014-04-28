@@ -1,0 +1,34 @@
+<%- model_class = Job -%>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <%# Posted Job Title Company Name  Location %>
+      <th>Posted</th>
+      <th>Job Title</th>
+      <th>Company Name</th>
+      <th>Location</th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @jobs.each do |job| %>
+      <tr>
+        <td><%= l job.created_at, format: :short %></td>
+        <td><%= job.job_title %></td>
+        <td><%= job.company_name %></td>
+        <td><%= job.location %></td>
+        <td>
+          <%= link_to job_path(job), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+          <%- end -%>
+          <%= link_to edit_job_path(job), :class => 'btn btn-xs', :title => "#{ t('.edit', :default => t('helpers.links.edit')) }" do %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to job_path(job), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
