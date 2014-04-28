@@ -9,6 +9,8 @@ gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'bootstrap-sass-extras'
+gem 'simple_form'
+gem 'bootstrap_form'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -30,6 +32,7 @@ gem 'spring',        group: :development
 
 gem 'rails_12factor', group: :production
 
+gem 'kaminari'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
