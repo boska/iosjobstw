@@ -18,21 +18,21 @@
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
             <li>
-              <%= button_to 'Post a new job',new_job_path,:class => 'btn btn-default navbar-btn',:method =>'get'  %>
+              <%= button_to '張貼新職缺',new_job_path,:class => 'btn btn-default navbar-btn',:method =>'get'  %>
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
               <li>
                 <p class="navbar-text">Hi,<%=current_user.email%>
-                  <%= link_to '(Sign out)',destroy_user_session_path %></p>
+                  <%= link_to '(登出)',destroy_user_session_path %></p>
               </li>
             <% else %>
               <li>
-                <%= link_to 'Sign up',new_user_registration_path %>
+                <%= link_to '註冊',new_user_registration_path %>
               </li>
               <li>
-                <%= link_to 'Login',new_user_session_path %>
+                <%= link_to '登入',new_user_session_path %>
               </li>
             <% end %>
           </ul>

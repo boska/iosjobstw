@@ -12,5 +12,6 @@ body {
 }
 $brand-success : #5cb85c;
 $navbar-default-link-color : $brand-success;
+$pagination-active-bg : $brand-success;
 $link-color : $brand-success;
 @import "bootstrap";

@@ -6,5 +6,7 @@
   <%= f.text_field :location %>
   <%= f.text_area :description %>
   <%= f.date_select :deadline%>
-  <%= f.submit %>
+  <%= f.form_group do %>
+    <%= f.submit %>
+  <% end %>
 <% end %>
