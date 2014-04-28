@@ -1,0 +1,34 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <%= render "shared/forkme" %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-8">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to "iOSjobs.tw",root_path, class:'navbar-brand'  %>
+        </div>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+          <ul class="nav navbar-nav">
+            <li>
+              <%= link_to 'Post a new job',new_job_path,:class => 'btn' %>
+            </li>
+            <li>
+              <%= link_to 'Sign up',new_user_registration_path %>
+            </li>
+            <li>
+              <%= link_to 'Login',new_user_session_path %>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div>
+    </div>
+  </div>
+</nav>
