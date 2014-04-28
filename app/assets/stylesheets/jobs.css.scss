@@ -7,8 +7,10 @@ body {
 
 @media (max-width: 980px) {
   body {
-    padding-top: 0;
+    padding-top: 60px;
   }
 }
-
+$brand-success : #5cb85c;
+$navbar-default-link-color : $brand-success;
+$link-color : $brand-success;
 @import "bootstrap";
