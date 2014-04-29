@@ -36,6 +36,8 @@ gem 'rails_12factor', group: :production
 
 gem 'kaminari'
 
+gem "social-buttons", '~> 0.3'
+gem "acts_as_opengraph"
 gem 'devise'
 gem 'devise-i18n-views'
 # Use ActiveModel has_secure_password

@@ -5,7 +5,7 @@
     <%= link_to(@job.company_name,@job.url, :target => '_blank' ) %></h4>
   <small><%= model_class.human_attribute_name(:deadline) %>:<%= l(@job.deadline,:format => :short) %></small>
   <small><%= t :created_at %>:<%= l(@job.created_at,:format => :short) %></small>
-</div>
+  <%= like_button_for(@job, :href => job_url(@job),:share => true).html_safe %></div>
 <div class="panel panel-default">
   <div class="panel-heading"><%= model_class.human_attribute_name(:job_type) %></div>
   <div class="panel-body"><%= Job.job_hash[@job.job_type]%></div>
@@ -29,3 +29,4 @@
               :class => 'btn btn-danger' %>
   </div>
 <% end %>
+<% content_for :opengraph_meta_tags, opengraph_meta_tags_for(@job) %>

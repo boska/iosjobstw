@@ -1,12 +1,18 @@
 class Job < ActiveRecord::Base
   paginates_per 20
+  acts_as_opengraph
   belongs_to :user
   validates :job_title, presence: true
   validates :company_name, presence: true
   validates :location, presence: true
   validates :apply, length: { maximum: 500 }
   validates :description, length: { maximum: 500 }
-
+  def opengraph_title
+    "#{job_title} @ #{company_name}"
+  end
+  def opengraph_description
+    description
+  end
   def remain_percent
     total_interval = self.deadline.to_f - self.created_at.to_f
     remain_interval = self.deadline.to_f - DateTime.now.to_f

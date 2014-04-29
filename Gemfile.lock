@@ -27,6 +27,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    acts_as_opengraph (0.0.5)
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
@@ -122,6 +123,8 @@ GEM
     simple_form (3.0.2)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
+    social-buttons (0.3.7)
+      rails (>= 3.0.0)
     spring (1.1.2)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -156,6 +159,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_opengraph
   bootstrap-sass (~> 3.1.1)
   bootstrap-sass-extras
   bootstrap_form
@@ -174,6 +178,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   simple_form
+  social-buttons (~> 0.3)
   spring
   turbolinks
   uglifier (>= 1.3.0)
