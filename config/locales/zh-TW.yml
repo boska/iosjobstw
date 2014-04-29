@@ -1,10 +1,20 @@
  zh-TW:
   post_a_new_job: 張貼新職缺
+  aleast_ios_job: 至少包含一個iOS的職缺
+  location_holder: 台北,台南,Remote...etc
   email: 電子信箱地址
   password: 密碼
   password_confirmation: 確認密碼
   registration: 註冊
   remember_me: 記得我
+  job_type: "工作類型"
+  full_type: "全職工作"
+  part_type: "兼職工作"
+  contract_type: "簽約工作"
+  intern_type: "實習工作"
+  other_type: "其他"
+  created_at: "張貼日期"
+  deadline_help: "依日期自動隱藏職缺(預設兩周)"
   date:
     abbr_day_names:
     - 日
@@ -205,7 +215,7 @@
     formats:
       default: ! '%Y年%b%d日 %A %H:%M:%S %Z'
       long: ! '%Y年%b%d日 %H:%M'
-      short: ! '%b%d日 %H:%M'
+      short: ! '%b%d日'
     pm: 下午
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   activemodel:
@@ -228,3 +238,4 @@
         job_type: "工作類型"
         description: "工作描述"
         deadline: "有效期限"
+        apply: "如何應徵"

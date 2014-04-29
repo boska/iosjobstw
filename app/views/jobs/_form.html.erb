@@ -1,12 +1,20 @@
 <%= bootstrap_form_for(@job, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
-  <%= f.text_field :job_title %>
+  <%= f.text_field :job_title ,help: t(:aleast_ios_job)%>
   <%= f.text_field :company_name %>
   <%= f.url_field :url ,as:'url'%>
-  <%= f.number_field :job_type %>
-  <%= f.text_field :location %>
-  <%= f.text_area :description %>
-  <%= f.date_select :deadline%>
+  <% f.number_field :job_type %>
+  <%= f.form_group :job_type, label: { text: t(:job_type)} do %>
+    <%= f.radio_button :job_type, 1, label:  t(:full_type), inline: true %>
+    <%= f.radio_button :job_type, 2, label:  t(:part_type), inline: true %>
+    <%= f.radio_button :job_type, 3, label:  t(:contract_type), inline: true %>
+    <%= f.radio_button :job_type, 4, label:  t(:intern_type), inline: true %>
+    <%= f.radio_button :job_type, 5, label:  t(:other_type), inline: true %>
+  <% end %>
+  <%= f.text_field :location , placeholder: t(:location_holder)%>
+  <%= f.text_area :description ,:rows => 5%>
+  <%= f.text_area :apply,:rows => 5 %>
+  <%= f.date_select :deadline ,help: t(:deadline_help)%>
   <%= f.form_group do %>
-    <%= f.submit %>
+    <%=  f.submit t('post_a_new_job', :default => "Resend confirmation instructions"), class: "btn btn-success" %>
   <% end %>
 <% end %>

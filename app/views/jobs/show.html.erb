@@ -1,24 +1,20 @@
 <%- model_class = Job -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <h4><%= @job.job_title %>
+    @
+    <%= link_to(@job.company_name,@job.url, :target => '_blank' ) %></h4>
+  <small><%= model_class.human_attribute_name(:deadline) %>:<%= l(@job.deadline,:format => :short) %></small>
+  <small><%= t :created_at %>:<%= l(@job.created_at,:format => :short) %></small>
 </div>
-<div class="fieldset">
-  <dl>
-    <dt class="label label-default"><%= model_class.human_attribute_name(:job_title) %></dt>
-    <dd><pre class="prettyprint"><%= @job.job_title %></pre></dd>
-    <dt class="label label-default"><%= model_class.human_attribute_name(:company_name) %></dt>
-    <dd><pre class="prettyprint"><%= @job.company_name %></pre></dd>
-    <dt class="label label-default"><%= model_class.human_attribute_name(:url) %></dt>
-    <dd><pre class="prettyprint"><%= @job.url %></pre></dd>
-    <dt class="label label-default"><%= model_class.human_attribute_name(:job_type) %></dt>
-    <dd><pre class="prettyprint"><%= @job.job_type %></pre></dd>
-    <dt class="label label-default"><%= model_class.human_attribute_name(:location) %></dt>
-    <dd><pre class="prettyprint"><%= @job.location %></pre></dd>
-    <dt class="label label-default"><%= model_class.human_attribute_name(:description) %></dt>
-    <dd><pre class="prettyprint"><%= @job.description %></pre></dd>
-    <dt class="label label-default"><%= model_class.human_attribute_name(:deadline) %></dt>
-    <dd><pre class="prettyprint"><%= @job.deadline %></pre></dd>
-  </dl>
+<div class="panel panel-default">
+  <div class="panel-heading"><%= model_class.human_attribute_name(:job_type) %></div>
+  <div class="panel-body"><%= Job.job_hash[@job.job_type]%></div>
+  <div class="panel-heading"><%= model_class.human_attribute_name(:location) %></div>
+  <div class="panel-body"><%= @job.location %></div>
+  <div class="panel-heading"><%= model_class.human_attribute_name(:description) %></div>
+  <div class="panel-body"><%= @job.description %></div>
+  <div class="panel-heading"><%= model_class.human_attribute_name(:apply) %></div>
+  <div class="panel-body"><%= @job.apply %></div>
 </div>
 <% if current_user && @job.user == current_user %>
   <div class="form-group">

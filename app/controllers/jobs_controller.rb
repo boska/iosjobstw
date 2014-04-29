@@ -14,7 +14,7 @@ class JobsController < ApplicationController
 
   # GET /jobs/new
   def new
-    @job = Job.new
+    @job = Job.new(:deadline => DateTime.now + 14 )
   end
 
   # GET /jobs/1/edit
@@ -72,6 +72,6 @@ class JobsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def job_params
-    params.require(:job).permit(:job_title, :company_name, :url, :job_type, :location, :description, :deadline)
+    params.require(:job).permit(:job_title, :company_name, :url, :job_type, :location, :description, :deadline,:apply)
   end
 end

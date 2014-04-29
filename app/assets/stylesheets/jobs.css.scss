@@ -10,8 +10,11 @@ body {
     padding-top: 60px;
   }
 }
-$brand-success : #5cb85c;
-$navbar-default-link-color : $brand-success;
-$pagination-active-bg : $brand-success;
-$link-color : $brand-success;
+
+$brand-success: #5cb85c;
+$navbar-default-link-color: $brand-success;
+$pagination-active-bg: $brand-success;
+$link-color: $brand-success;
+$table-cell-padding: 15px;
+
 @import "bootstrap";
