@@ -2,10 +2,10 @@ Project is based on heroku
 
 TODO:
 
-Google analytics
-Search
-User's jobs
-Deadline expired
+* Google analytics
+* Search
+* User's jobs
+* Deadline expired
 
 
 Welcome pull request
