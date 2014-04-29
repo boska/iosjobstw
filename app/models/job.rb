@@ -7,6 +7,10 @@ class Job < ActiveRecord::Base
   validates :location, presence: true
   validates :apply, length: { maximum: 500 }
   validates :description, length: { maximum: 500 }
+
+  def opengraph_image
+    "http://i.imgur.com/W11MEgT.png"
+  end
   def opengraph_title
     "#{job_title} @ #{company_name}"
   end
