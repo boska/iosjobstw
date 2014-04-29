@@ -1,0 +1,57 @@
+zh-TW:
+  simple_form:
+    labels:
+      default:
+        email: 電子信箱地址
+      user:
+        volunteer: 志工
+        volunteer_group: 志工團體
+        organization: 學校負責人
+        first_name: 名
+        last_name: 姓
+        name: 姓名
+        email: 電子信箱地址
+        password: 密碼
+        password_confirmation: 確認密碼
+        username: 使用者名稱
+        birth_year: 出生年
+        home_phone: 市話號碼
+        cell_phone: 手機號碼
+        zip_code: 郵遞區號
+        degree: 教育程度 
+        skills: 專長
+        gender: 性別
+      job:
+        title: 工作名稱
+        organization: 學校
+        desc: 工作內容
+        add: 登錄工作
+        add_new: 新增工作
+        edit: 編輯
+        delete: 刪除
+        begin_date: 開始日期
+        end_date: 結束日期
+        contact: 聯絡人
+        contact_phone: 聯絡電話
+        contact_email: 聯絡人電子郵件
+        requirement: 需求
+        education: 所需學經歷
+        period: 時間
+        school_name: 學校
+        action: 選項
+        show: 詳細內容
+        apply: 申請
+        status: 狀態
+        applicant: 查看義工
+      organization:
+        name: 名稱
+        profile: 描述
+        webpage: 網頁
+        address: 地址
+        district: 鄉鎮市區
+        city: 縣市
+        zipcode: 郵遞區號
+        contact: 聯絡人
+        status: 審核狀態
+    hints:
+    placeholders:

@@ -1,15 +1,14 @@
-<h2>Sign in</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign in" %>
-  </div>
+<h4><%= t('.sign_in', :default => "Sign in") %></h4>
+<%= bootstrap_form_for(resource, :as => resource_name, :url => session_path(resource_name), layout: :horizontal, label_col: "col-sm-4", control_col: "col-sm-6") do |f| %>
+  <%= f.email_field :email ,label:t(:email)%>
+  <%= f.password_field :password ,label:t(:password)%>
+  <% if devise_mapping.rememberable? -%>
+    <%= f.form_group :remember_me do %>
+      <%= f.check_box :remember_me,label:t(:remember_me) %>
+    <% end %>
+  <% end -%>
+  <%= f.form_group do %>
+    <%=  f.submit t('.sign_in', :default => "Sign in"), class: "btn btn-success" %>
+  <% end %>
 <% end %>
-
 <%= render "devise/shared/links" %>
