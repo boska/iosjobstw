@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  lower_bound: 1
+  upper_bound: 1
+
+two:
+  name: MyString
+  description: MyString
+  lower_bound: 1
+  upper_bound: 1
