@@ -4,6 +4,7 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
+    @page_title = "iOS 職缺"
     @jobs = Job.page params[:page]
   end
 

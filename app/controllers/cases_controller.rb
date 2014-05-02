@@ -2,6 +2,7 @@ class CasesController < ApplicationController
   before_action :set_case, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user! ,except: [:show,:index ]
   def index
+    @page_title = "專案外包"
     @cases = Case.all
   end
   def new
