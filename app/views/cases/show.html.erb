@@ -1,2 +1,32 @@
-<h1>Cases#show</h1>
-<p>Find me in app/views/cases/show.html.erb</p>
+<%- model_class = Case -%>
+<div class="page-header">
+  <h4><%= @cas.name %></h4>
+  <small><%= model_class.human_attribute_name(:deadline) %>:<%= l(@cas.deadline,:format => :short) %></small>
+  <small><%= t :created_at %>:<%= l(@cas.created_at,:format => :short) %></small><br>
+  <%= like_button_for(@cas, :href => case_url(@cas),:share => true).html_safe %></div>
+<div class="panel panel-default">
+  <div class="panel-heading"><%= t('badge') %></div>
+  <div class="panel-body"><%= number_to_currency @cas.lower_bound %><%= " ~ #{number_to_currency @cas.upper_bound}" %></div>
+  <div class="panel-heading"><%= model_class.human_attribute_name(:description) %></div>
+  <div class="panel-body"><%= @cas.description %></div>
+  <div class="panel-heading"><%= model_class.human_attribute_name(:detail) %></div>
+  <div class="panel-body"><%= @cas.detail %></div>
+</div>
+<% if current_user && @cas.user == current_user %>
+  <div class="form-group">
+    <%= link_to t('.back', :default => t("helpers.links.back")),
+              cases_path, :class => 'btn btn-default'  %>
+    <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_case_path(@cas), :class => 'btn btn-default' %>
+    <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              case_path(@cas),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+  </div>
+<% else %>
+  <div class="form-group">
+    <%= mail_to @cas.email, t('apply_case'), encode: "hex",:class => 'btn btn-default',:subject => "您好我對您的專案<#{@cas.name}>有興趣" %>
+  </div>
+<% end %>
+<% content_for :opengraph_meta_tags, opengraph_meta_tags_for(@cas) %>

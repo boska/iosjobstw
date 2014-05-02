@@ -1,2 +1,5 @@
-<h1>Cases#edit</h1>
-<p>Find me in app/views/cases/edit.html.erb</p>
+<%- model_class = Case -%>
+<div class="page-header">
+  <h4><%=t '.title', :default => [:'helpers.titles.edit', '修改 %{model}'], :model => model_class.model_name.human.titleize %></h4>
+</div>
+<%= render :partial => 'form' %>

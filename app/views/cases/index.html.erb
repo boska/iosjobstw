@@ -3,19 +3,19 @@
   <thead>
     <tr>
       <%# Posted Job Title Company Name  Location %>
-      <th>張貼日期</th>
-      <th>工作職稱</th>
-      <th>公司名稱</th>
-      <th>工作地點</th>
+      <th class="col-md-2">張貼日期</th>
+      <th>專案名稱</th>
+      <th class="col-md-1">預算</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
-    <% @cases.each do |c| %>
+    <% @cases.each do |cas| %>
       <tr>
-        <td><%= l c.created_at, format: :short %></td>
-        <td><%= link_to( c.name , case_path(c) )%></td>
-        <td><%= c.name %></td>
-        <td><%= c.description %></td>
+        <td><%= l cas.created_at, format: :short %></td>
+        <td><%= link_to( cas.name , case_path(cas) )%><br><%= cas.description  %></td>
+        <td><%= number_to_currency(cas.lower_bound) %></td>
+        <td colspan="2"><%= "~#{number_to_currency(cas.upper_bound)}" if cas.upper_bound.present? %></td>
       </tr>
     <% end %>
   </tbody>

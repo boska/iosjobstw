@@ -1,6 +1,10 @@
  zh-TW:
   post_a_new_job: 張貼新職缺
+  post_a_new_case: 張貼新專案
+  apply_case: 我要提案(Email)
   aleast_ios_job: 至少包含一個iOS的職缺
+  max_100word: 最多一百字
+  aleast_ios_case: 請以iOS專案為主
   location_holder: 台北,台南,Remote...etc
   email: 電子信箱地址
   password: 密碼
@@ -15,6 +19,7 @@
   other_type: "其他"
   created_at: "張貼日期"
   deadline_help: "依日期自動隱藏職缺(預設兩周)"
+  badge: "專案預算"
   date:
     abbr_day_names:
     - 日
@@ -162,8 +167,8 @@
     currency:
       format:
         delimiter: ! ','
-        format: ! '%u %n'
-        precision: 2
+        format: ! '%n'
+        precision: 0
         separator: .
         significant: false
         strip_insignificant_zeros: false
@@ -228,7 +233,8 @@
   activerecord:
     models:
       user: '使用者'
-      job: '工作'
+      job: '工作'     
+      job: '專案'
     attributes:
       job:
         job_title: "工作職稱"
@@ -239,3 +245,11 @@
         description: "工作描述"
         deadline: "有效期限"
         apply: "如何應徵"
+      case:
+        name: "專案名稱"
+        description: "專案摘要"
+        deadline: "專案有效期限"
+        detail: "專案詳細內容"
+        email: "聯絡信箱"
+        lower_bound: "預算下限"
+        upper_bound: "預算上限"

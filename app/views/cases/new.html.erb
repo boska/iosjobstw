@@ -1,2 +1,5 @@
-<h1>Cases#new</h1>
-<p>Find me in app/views/cases/new.html.erb</p>
+<%- model_class = Case -%>
+<div class="page-header">
+  <h4><%= t('post_a_new_case') %></h4>
+</div>
+<%= render :partial => 'form' %>

@@ -1,0 +1,12 @@
+<%= bootstrap_form_for(@cas, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
+  <%= f.text_field :name ,help: t(:aleast_ios_case)%>
+  <%= f.text_area :description ,:rows => 3,help: t(:max_100word)%>
+  <%= f.text_area :detail ,:rows => 10%>
+  <%= f.email_field :email %>
+  <%= f.number_field :lower_bound,min:5000,step:1000,default:5000,value:5000 %>
+  <%= f.number_field :upper_bound,min:5000,step:1000,default:5000,value:5000 %>
+  <%= f.date_select :deadline %>
+  <%= f.form_group do %>
+    <%=  f.submit t('post_a_new_case', :default => "Resend confirmation instructions"), class: "btn btn-success" %>
+  <% end %>
+<% end %>

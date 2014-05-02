@@ -34,7 +34,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem "letter_opener", :group => :development
 gem 'rails_12factor', group: :production
-
+gem 'actionview-encoded_mail_to'
 gem 'kaminari'
 
 gem "social-buttons", '~> 0.3'
