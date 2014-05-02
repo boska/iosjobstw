@@ -9,6 +9,7 @@
     <%= csrf_meta_tags %>
     <%= render_body_tag %>
     <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= analytics_init if Rails.env.production? %>
   </head>
   <body>
     <%= render "shared/navbar" %>

@@ -41,6 +41,8 @@ gem "social-buttons", '~> 0.3'
 gem "acts_as_opengraph"
 gem 'devise'
 gem 'devise-i18n-views'
+
+gem 'google-analytics-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
