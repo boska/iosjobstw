@@ -7,7 +7,14 @@ class JobsController < ApplicationController
     @page_title = "iOS 職缺"
     @jobs = Job.page params[:page]
   end
-
+  def index
+    @page_title = "iOS 職缺"
+    if params[:search]
+      @jobs = Job.search(params[:search]).page params[:page]
+    else
+      @jobs = Job.page params[:page]
+    end
+  end
   # GET /jobs/1
   # GET /jobs/1.json
   def show

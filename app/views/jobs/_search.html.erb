@@ -1,0 +1,4 @@
+<%= bootstrap_form_tag url: '/jobs',layout: :inline,:method=>'GET' do |f| %>
+  <%= f.submit '搜尋' %>
+  <%= f.search_field :search, hide_label: true %>
+<% end %>

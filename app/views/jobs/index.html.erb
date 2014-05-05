@@ -1,3 +1,4 @@
+<%= render :partial => "search" %>
 <%- model_class = Job -%>
 <table class="table table-striped table-hover">
   <thead>
@@ -9,15 +10,8 @@
       <th>工作地點</th>
     </tr>
   </thead>
-  <tbody>
-    <% @jobs.each do |job| %>
-      <tr>
-        <td><%= l job.created_at, format: :short %></td>
-        <td><%= link_to( job.job_title , job_path(job) )%></td>
-        <td><%= job.company_name %></td>
-        <td><%= job.location %></td>
-      </tr>
-    <% end %>
+  <tbody id='job-list'>
+    <%= render partial: "job", collection: @jobs %>
   </tbody>
 </table>
 <%= paginate @jobs %>

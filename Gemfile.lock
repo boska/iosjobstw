@@ -148,6 +148,11 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
+    turboboost (0.0.8)
+      coffee-rails
+      jquery-rails
+      railties
+      turbolinks
     turbolinks (2.2.2)
       coffee-rails
     tzinfo (1.1.0)
@@ -191,6 +196,7 @@ DEPENDENCIES
   simple_form
   social-buttons (~> 0.3)
   spring
+  turboboost
   turbolinks
   uglifier (>= 1.3.0)
   unicorn

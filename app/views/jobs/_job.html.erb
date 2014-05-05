@@ -1,0 +1,6 @@
+<tr>
+  <td><%= l job.created_at, format: :short %></td>
+  <td><%= link_to( job.job_title , job_path(job) )%></td>
+  <td><%= job.company_name %></td>
+  <td><%= job.location %></td>
+</tr>

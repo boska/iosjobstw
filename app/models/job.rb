@@ -26,4 +26,7 @@ class Job < ActiveRecord::Base
   def self.job_hash
     {1 => I18n.t(:full_type),2 => I18n.t(:part_type),3 => I18n.t(:contract_type),4 => I18n.t(:intern_type),5 => I18n.t(:other_type)}
   end
+  def self.search(query)
+    where("job_title like ?", "%#{query}%")
+  end
 end
