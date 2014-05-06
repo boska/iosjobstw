@@ -5,7 +5,7 @@ class Case < ActiveRecord::Base
   validates :name, presence: true
   validates :description, presence: true
   validates :description, length: { maximum: 100 }
-  validates :detail, length: { maximum: 1000 }
+  validates :detail, length: { maximum: 5000 }
 
   def opengraph_image
     "http://i.imgur.com/W11MEgT.png"

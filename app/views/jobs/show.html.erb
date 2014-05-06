@@ -12,7 +12,7 @@
   <div class="panel-heading"><%= model_class.human_attribute_name(:location) %></div>
   <div class="panel-body"><%= @job.location %></div>
   <div class="panel-heading"><%= model_class.human_attribute_name(:description) %></div>
-  <div class="panel-body"><%= @job.description %></div>
+  <div class="panel-body"><%= auto_link @job.description %></div>
   <div class="panel-heading"><%= model_class.human_attribute_name(:apply) %></div>
   <div class="panel-body"><%= @job.apply %></div>
 </div>
