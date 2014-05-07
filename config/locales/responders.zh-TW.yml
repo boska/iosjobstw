@@ -1,0 +1,12 @@
+zh-TW:
+  flash:
+    actions:
+      create:
+        notice: '%{resource_name} 成功建立了.'
+        # alert: '%{resource_name} could not be created.'
+      update:
+        notice: '%{resource_name} 成功更新了.'
+        # alert: '%{resource_name} could not be updated.'
+      destroy:
+        notice: '%{resource_name} 已刪除.'
+        alert: '%{resource_name} 刪除失敗.'

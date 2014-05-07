@@ -233,8 +233,8 @@
   activerecord:
     models:
       user: '使用者'
-      job: '工作'     
-      job: '專案'
+      job: '職缺'     
+      case: '專案'
     attributes:
       job:
         job_title: "工作職稱"

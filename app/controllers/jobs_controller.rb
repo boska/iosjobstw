@@ -1,12 +1,7 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user! ,except: [:show,:index ]
-  # GET /jobs
-  # GET /jobs.json
-  def index
-    @page_title = "iOS 職缺"
-    @jobs = Job.page params[:page]
-  end
+  responders :flash
   def index
     @page_title = "iOS 職缺"
     if params[:search]
@@ -15,66 +10,32 @@ class JobsController < ApplicationController
       @jobs = Job.page params[:page]
     end
   end
-  # GET /jobs/1
-  # GET /jobs/1.json
   def show
   end
-
-  # GET /jobs/new
   def new
     @job = Job.new(:deadline => DateTime.now + 14 )
   end
-
-  # GET /jobs/1/edit
   def edit
-    @job = current_user.jobs.find(params[:id])
   end
-
-  # POST /jobs
-  # POST /jobs.json
   def create
     @job = Job.new(job_params)
     @job.user_id = current_user.id
-    respond_to do |format|
-      if @job.save
-        format.html { redirect_to @job, notice: 'Job was successfully created.' }
-        format.json { render :show, status: :created, location: @job }
-      else
-        format.html { render :new }
-        format.json { render json: @job.errors, status: :unprocessable_entity }
-      end
-    end
+    @job.save
+    respond_with(@job)
   end
-
-  # PATCH/PUT /jobs/1
-  # PATCH/PUT /jobs/1.json
   def update
-    @job = current_user.jobs.find(params[:id])
-    respond_to do |format|
-      if @job.update(job_params)
-        format.html { redirect_to @job, notice: 'Job was successfully updated.' }
-        format.json { render :show, status: :ok, location: @job }
-      else
-        format.html { render :edit }
-        format.json { render json: @job.errors, status: :unprocessable_entity }
-      end
-    end
+    @job.update(job_params)
+    respond_with(@job)
   end
-
-  # DELETE /jobs/1
-  # DELETE /jobs/1.json
   def destroy
-    @job = current_user.jobs.find(params[:id])
     @job.destroy
-    respond_to do |format|
-      format.html { redirect_to jobs_url }
-      format.json { head :no_content }
-    end
+    respond_with(@job)
   end
 
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_job
+    @job = current_user.jobs.find(params[:id]) if current_user
     @job = Job.find(params[:id])
   end
 
