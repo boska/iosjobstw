@@ -6,7 +6,7 @@ gem 'rails', '4.1.0'
 gem 'rails-i18n'
 gem 'rails_autolink'
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem 'mysql2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 gem 'bootstrap-sass', '~> 3.1.1'
