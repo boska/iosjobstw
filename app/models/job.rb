@@ -1,4 +1,5 @@
 class Job < ActiveRecord::Base
+  default_scope {order('created_at DESC')}
   paginates_per 20
   acts_as_opengraph
   belongs_to :user
