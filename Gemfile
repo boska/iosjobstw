@@ -41,6 +41,7 @@ gem "social-buttons", '~> 0.3'
 gem "acts_as_opengraph"
 gem 'devise'
 gem 'devise-i18n-views'
+gem 'omniauth-facebook'
 gem "turboboost"
 gem 'google-analytics-rails'
 # Use ActiveModel has_secure_password
@@ -48,10 +49,10 @@ gem 'google-analytics-rails'
 
 # Use unicorn as the app server
 gem 'unicorn'
-
+gem 'dotenv-rails', :groups => [:development, :test]
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
+gem 'capistrano-rails', group: :development
+gem "rvm-capistrano"
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 ruby "2.1.1"
