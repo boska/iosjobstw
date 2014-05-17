@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable,:confirmable
-  devise :omniauthable, :omniauth_providers => [:facebook]
+  #devise :omniauthable, :omniauth_providers => [:facebook]
   has_many :jobs
   has_many :cases
   def self.find_for_facebook_oauth(auth)
