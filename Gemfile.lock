@@ -127,6 +127,7 @@ GEM
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
     pg (0.17.1)
+    placeholdit (0.0.3)
     polyglot (0.3.4)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -244,6 +245,7 @@ DEPENDENCIES
   mysql2
   omniauth-facebook
   pg
+  placeholdit
   rails (= 4.1.0)
   rails-i18n
   rails_12factor

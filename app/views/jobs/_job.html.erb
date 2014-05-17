@@ -1,6 +1,15 @@
-<tr>
-  <td><%= l job.created_at, format: :short %></td>
-  <td><%= link_to( job.job_title , job_path(job) )%></td>
-  <td><%= job.company_name %></td>
-  <td><%= job.location %></td>
-</tr>
+<div class="col-sm-6 col-md-4">
+  <div class="thumbnail">
+    <%= placeholdit_image_tag "300", text: "We Want You!" %>
+    <div class="caption">
+      <h5><%= link_to( job.job_title , job_path(job) )%></h5>
+      <h5><%= job.company_name %>
+        @
+        <%= job.location  %></h5>
+      <%= render_brief(job.description) %>
+      <div class="btn-group btn-group-justified">
+        <%= link_to( "我要應徵" , job_path(job),class: "btn btn-success" )%>
+      </div>
+    </div>
+  </div>
+</div>
