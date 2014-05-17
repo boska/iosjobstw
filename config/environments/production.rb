@@ -19,7 +19,7 @@ Rails.application.configure do
   # For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
   # config.action_dispatch.rack_cache = true
 
-  config.action_mailer.default_url_options = { :host => 'iosjobs.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'iosjobs.tw' }
   ActionMailer::Base.smtp_settings = {
     :address        => "smtp.sendgrid.net",
     :port           => "25",
