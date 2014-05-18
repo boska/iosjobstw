@@ -9,6 +9,8 @@ class Job < ActiveRecord::Base
   validates :apply, length: { maximum: 500 }
   validates :description, length: { maximum: 5000 }
 
+  has_attached_file :logo, :styles => { :square => "300x300#", :thumb => "100x100#" }, :default_url => "http://i.imgur.com/N1D739m.png"
+  validates_attachment_content_type :logo, :content_type => /\Aimage\/.*\Z/
   def opengraph_image
     "http://i.imgur.com/W11MEgT.png"
   end

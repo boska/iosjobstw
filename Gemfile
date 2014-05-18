@@ -37,7 +37,8 @@ gem "letter_opener", :group => :development
 gem 'rails_12factor', group: :production
 gem 'actionview-encoded_mail_to'
 gem 'kaminari'
-
+gem "paperclip", "~> 4.1"
+gem 'aws-sdk'
 gem "social-buttons", '~> 0.3'
 gem "acts_as_opengraph"
 gem 'devise'

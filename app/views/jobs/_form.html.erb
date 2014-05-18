@@ -1,4 +1,5 @@
 <%= bootstrap_form_for(@job, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
+  <%=f.file_field :logo  %>
   <%= f.text_field :job_title ,help: t(:aleast_ios_job)%>
   <%= f.text_field :company_name %>
   <%= f.url_field :url ,as:'url'%>

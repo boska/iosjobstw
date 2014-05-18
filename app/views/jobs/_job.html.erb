@@ -1,12 +1,11 @@
 <div class="col-sm-6 col-md-4">
   <div class="thumbnail">
-    <%= placeholdit_image_tag "300", text: "We Want You!" %>
+    <%= image_tag job.logo.url(:square) %>
     <div class="caption">
-      <h5><%= link_to( job.job_title , job_path(job) )%></h5>
-      <h5><%= job.company_name %>
-        @
-        <%= job.location  %></h5>
-      <%= render_brief(job.description) %>
+      <h5 class="text-center"><%= link_to( job.job_title , job_path(job) )%></h5>
+      <h5 class="text-center"><%= job.company_name %></h5>
+      <h5 class="text-center"><strong>@</strong></h5>
+      <h5 class="text-center"><span class="badge"><%= job.location  %></span></h5>
       <div class="btn-group btn-group-justified">
         <%= link_to( "我要應徵" , job_path(job),class: "btn btn-success" )%>
       </div>
