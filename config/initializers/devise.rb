@@ -4,9 +4,9 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  config.secret_key = ENV['SECRET_KEY_BASE']
+  config.secret_key = '7eff9647649e25306044bf5b42ac10ce0bae02e3ba34b26d98cda9e38cea151b523e4b15abbd75407ce1445f91f82f9bdc1c6e97c228dbe803ee28aebf8d24ed'
   config.omniauth :facebook, ENV['APP_ID'], ENV['APP_SECRET'],
-                            {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
+    {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class

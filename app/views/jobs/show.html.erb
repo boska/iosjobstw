@@ -1,5 +1,6 @@
 <%- model_class = Job -%>
 <div class="page-header">
+  <%= image_tag(@job.logo.url(:thumb),class:'img-responsive" pull-right') %>
   <h4><%= @job.job_title %>
     @
     <%= link_to(@job.company_name,@job.url, :target => '_blank' ) %></h4>
